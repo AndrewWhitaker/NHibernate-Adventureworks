@@ -50,7 +50,6 @@
 
         private void DefaultMapOneToOne(IModelInspector inspector, PropertyPath member, IOneToOneMapper mapper)
         {
-            Console.WriteLine("asdfasdf");
         }
 
         private void DefaultMapManyToOne(IModelInspector inspector, PropertyPath member, IManyToOneMapper customizer)

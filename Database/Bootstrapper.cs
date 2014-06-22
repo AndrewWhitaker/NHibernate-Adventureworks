@@ -28,9 +28,6 @@
 
             var mappings = mapper.CompileMappingFor(entities);
 
-            XmlSerializer ser = new XmlSerializer(mappings.GetType());
-            ser.Serialize(Console.Out, mappings);
-
             var cfg = new Configuration()
                 .Configure()
                 .DataBaseIntegration(db =>
