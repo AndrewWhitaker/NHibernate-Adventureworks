@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B455A259-5AC3-4DF4-9D95-31DB5F52F842}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdventureWorks</RootNamespace>
+    <AssemblyName>AdventureWorks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\Mapping\BusinessEntityAddressMap.cs" />
+    <Compile Include="Database\Mapping\BusinessEntityContactMap.cs" />
+    <Compile Include="Database\Mapping\EmployeeMap.cs" />
+    <Compile Include="Database\Mapping\PasswordMap.cs" />
+    <Compile Include="Database\Mapping\PersonMap.cs" />
+    <Compile Include="Database\Mapping\ProductCostHistoryMap.cs" />
+    <Compile Include="Database\Mapping\TransactionHistoryMap.cs" />
+    <Compile Include="Database\PropertyPathExtensions.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\HumanResources\Employee.cs" />
+    <Compile Include="Entities\Person\Address.cs" />
+    <Compile Include="Entities\Person\AddressType.cs" />
+    <Compile Include="Entities\Person\BusinessEntity.cs" />
+    <Compile Include="Entities\Person\BusinessEntityAddress.cs" />
+    <Compile Include="Entities\Person\BusinessEntityAddressId.cs" />
+    <Compile Include="Entities\Person\BusinessEntityContact.cs" />
+    <Compile Include="Entities\Person\ContactType.cs" />
+    <Compile Include="Entities\Person\NameStyle.cs" />
+    <Compile Include="Entities\Person\Password.cs" />
+    <Compile Include="Entities\Person\Person.cs" />
+    <Compile Include="Entities\Production\Product.cs" />
+    <Compile Include="Database\Bootstrapper.cs" />
+    <Compile Include="Database\Conventions\AdventureWorksModelMapper.cs" />
+    <Compile Include="Entities\Production\ProductCategory.cs" />
+    <Compile Include="Entities\Production\ProductCostHistory.cs" />
+    <Compile Include="Entities\Production\ProductModel.cs" />
+    <Compile Include="Entities\Production\ProductReview.cs" />
+    <Compile Include="Entities\Production\ProductSubcategory.cs" />
+    <Compile Include="Entities\Production\TransactionHistory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
